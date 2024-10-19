@@ -38,7 +38,6 @@ function Quiz() {
             handleClick={(selected) => {
               checkQuestion(selected, questionData)
             }}
-            selectedAnswer={3}
           />
         ))}
       </div>
