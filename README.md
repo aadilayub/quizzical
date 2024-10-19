@@ -1,5 +1,3 @@
----
-
 [Scrimba Project](https://v2.scrimba.com/quizzical-prj0b1088f6) |
 [Figma](https://www.figma.com/design/E9S5iPcm10f0RIHK8mCqKL/Quizzical-App?node-id=0-1&node-type=canvas&t=xcbsMvjWR8bcyUe2-0)
 
