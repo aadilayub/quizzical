@@ -21,6 +21,7 @@ function Quiz() {
   }, [])
 
   function checkQuestion(selected, question) {
+    // TODO: fix entire quiz component re-rendering when correct answer is selected for one question
     if (selected == question.correct_answer) {
       setScore(score + 1)
     }
@@ -42,6 +43,8 @@ function Quiz() {
         ))}
       </div>
       {checked && (
+        // TODO: add Play again button
+        // TODO: make this match figma design
         <p className="scorecard">You scored {score}/5 correct answers</p>
       )}
       <div
