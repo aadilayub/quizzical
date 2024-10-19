@@ -1,7 +1,7 @@
 import React from 'react'
 import {decode} from 'html-entities'
 
-function Question({data, showAnswer, handleClick}) {
+const Question = React.memo(function Question({data, showAnswer, handleClick}) {
   const incorrectAnswers = data.incorrect_answers.map((answer) => ({
     content: answer,
     correct: false
@@ -39,6 +39,6 @@ function Question({data, showAnswer, handleClick}) {
       </ul>
     </div>
   )
-}
+})
 
 export default Question
