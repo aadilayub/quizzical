@@ -110,6 +110,10 @@ body {
   cursor: pointer;
 }
 
+.scorecard {
+  text-align: center;
+}
+
 @media (max-width: 720px) {
   .blob { display: none; }
   .question { 

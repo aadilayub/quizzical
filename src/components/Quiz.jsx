@@ -41,7 +41,9 @@ function Quiz() {
           />
         ))}
       </div>
-      {checked && <p>You scored {score}/5 correct answers</p>}
+      {checked && (
+        <p className="scorecard">You scored {score}/5 correct answers</p>
+      )}
       <div
         className="btn"
         onClick={() => {
