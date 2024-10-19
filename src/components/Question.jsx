@@ -1,3 +1,4 @@
+import React from 'react'
 import {decode} from 'html-entities'
 
 function Question({data, showAnswer, handleClick}) {
@@ -11,7 +12,9 @@ function Question({data, showAnswer, handleClick}) {
     ...incorrectAnswers
   ]
 
-  answers.sort(() => Math.random() - 0.5) // shuffling the array
+  React.useEffect(() => {
+    answers.sort(() => Math.random() - 0.5) // shuffling the array
+  }, [])
 
   return (
     <div className="question-wrapper">
