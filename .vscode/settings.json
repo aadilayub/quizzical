@@ -41,5 +41,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "IDX.aI.enableCodebaseIndexing": true,
-  "IDX.corgiMode": true
+  "editor.wordWrap": "wordWrapColumn"
 }
