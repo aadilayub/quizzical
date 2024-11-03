@@ -17,6 +17,10 @@ body {
 
 .start-screen {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
 .start-screen h1 {
@@ -37,6 +41,7 @@ body {
   background-color: #4d5b9e;
   border-radius: 15px;
   padding: 1em 2em;
+  cursor: pointer;
 }
 
 .questions-list {
@@ -84,7 +89,6 @@ fieldset.answers-list {
 
 .btn.check-answers {
   margin-inline: auto;
-  cursor: pointer;
   display: block;
 }
 
