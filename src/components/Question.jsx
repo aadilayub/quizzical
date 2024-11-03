@@ -1,34 +1,26 @@
 import React from 'react'
 import {decode} from 'html-entities'
 
-function Question({data}) {
-  const incorrectAnswers = data.incorrect_answers.map((answer) => ({
-    content: answer,
-    correct: false
-  }))
+function Question({data, handleChange}) {
+  const {question, user_answer, correct_answer, incorrect_answers} = data
 
-  const answers = [
-    {content: data.correct_answer, correct: true},
-    ...incorrectAnswers
-  ]
-
-  // TODO: use separate shuffledAnswers array for list, and wrap it in a useEffect
-  React.useEffect(() => {
-    answers.sort(() => Math.random() - 0.5) // shuffling the array
-  }, [])
+  // TODO: shuffle this array and persist the order across state somehow
+  const answers = [correct_answer, ...incorrect_answers]
 
   return (
     <div className="question-wrapper">
-      <h2 className="question">{decode(data.question)}</h2>
+      <h2 className="question">{decode(question)}</h2>
       <fieldset className="answers-list">
         {answers.map((answer) => (
           <label key={crypto.randomUUID()} className={`answer-list--item`}>
             <input
               type="radio"
-              name={decode(data.question)}
-              value={answer.content}
+              name={question}
+              value={answer}
+              onChange={handleChange}
+              checked={user_answer === answer}
             />
-            {decode(answer.content)}
+            {decode(answer)}
           </label>
         ))}
       </fieldset>
