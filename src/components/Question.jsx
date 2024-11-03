@@ -1,17 +1,18 @@
 import React from 'react'
 import {decode} from 'html-entities'
+import {applyOrder} from '../utils/order'
 
 function Question({data, handleChange}) {
-  const {question, user_answer, correct_answer, incorrect_answers} = data
+  const {question, user_answer, correct_answer, incorrect_answers, order} = data
 
-  // TODO: shuffle this array and persist the order across state somehow
   const answers = [correct_answer, ...incorrect_answers]
+  const shuffledAnswers = applyOrder(answers, order)
 
   return (
     <div className="question-wrapper">
       <h2 className="question">{decode(question)}</h2>
       <fieldset className="answers-list">
-        {answers.map((answer) => (
+        {shuffledAnswers.map((answer) => (
           <label key={crypto.randomUUID()} className={`answer-list--item`}>
             <input
               type="radio"

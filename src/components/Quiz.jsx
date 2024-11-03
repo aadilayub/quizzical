@@ -1,5 +1,6 @@
 import Question from './Question'
 import React from 'react'
+import {randomOrder} from '../utils/order'
 
 function Quiz() {
   const [questions, setQuestions] = React.useState([])
@@ -14,7 +15,8 @@ function Quiz() {
       const data = await res.json()
       const questionData = data.results.map((result) => ({
         ...result,
-        user_answer: null
+        user_answer: null,
+        order: randomOrder()
       }))
       setQuestions(questionData)
     }
