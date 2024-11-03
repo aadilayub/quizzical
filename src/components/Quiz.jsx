@@ -27,6 +27,7 @@ function Quiz() {
     }
   }
 
+  // TODO: refactor quiz into form
   return (
     <div className="quiz-screen">
       <div className="questions-list">
