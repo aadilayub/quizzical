@@ -27,7 +27,7 @@ function Quiz() {
         ))}
       </div>
       {/* TODO: mark incorrect answers on check */}
-      <button className="btn">Check answers</button>
+      <button className="btn check-answers">Check answers</button>
     </form>
   )
 }

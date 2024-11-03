@@ -82,6 +82,12 @@ fieldset.answers-list {
   border-color: #d6dbf5;
 }
 
+.btn.check-answers {
+  margin-inline: auto;
+  cursor: pointer;
+  display: block;
+}
+
 @media (max-width: 720px) {
   .question {
     margin-bottom: 3rem;
