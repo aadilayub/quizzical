@@ -1,23 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import StartScreen from './components/StartScreen'
 import Quiz from './components/Quiz'
 
 function App() {
-  const [page, setPage] = React.useState('Start')
-  // if page == start, show start screen
-  // if page == quiz, show quiz screen
+  const [startQuiz, setStartQuiz] = React.useState(false)
 
-  const startQuiz = () => {
-    setPage('Quiz')
+  const initQuiz = () => {
+    setStartQuiz(true)
   }
 
-  return (
-    <>
-      {page === 'Start' && <StartScreen onStart={startQuiz} />}
-      {page === 'Quiz' && <Quiz />}
-    </>
+  const StartScreen = (
+    <div className="start-screen">
+      <h1>Quizzical</h1>
+      <p>Some description if needed</p>
+      <button className="btn" onClick={initQuiz}>
+        Start
+      </button>
+    </div>
   )
+
+  return <>{startQuiz ? <Quiz /> : StartScreen}</>
 }
 
 export default App
