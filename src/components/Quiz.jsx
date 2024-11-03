@@ -56,10 +56,10 @@ function Quiz() {
             key={crypto.randomUUID()}
             data={question}
             handleChange={handleChange}
+            hasGameEnded={hasGameEnded}
           />
         ))}
       </div>
-      {/* TODO: mark incorrect answers on check */}
       {hasGameEnded ? (
         <p>You scored {score}/5 correct answers</p>
       ) : (
