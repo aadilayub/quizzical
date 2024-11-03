@@ -1,3 +1,4 @@
+/* TODO: use css variables for colors and border radii */
 :root {
   font-size: 16px;
 }
@@ -47,69 +48,46 @@ body {
   border-bottom: 1px solid #dbdef0;
 }
 
-.answers-list {
+fieldset.answers-list {
   display: flex;
   list-style: none;
   padding-left: 0;
   gap: 1rem;
-}
-
-.answers-list li {
-  border: 1px solid #4d5b9e;
-  padding: 0.25em 2em;
-  border-radius: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.answers-list li:hover {
-  background: #4d5b9e;
-  color: #f5f7fb;
-}
-
-.answer-list--item.selected {
-  background: #d6dbf5;
   border: none;
 }
 
-.answer-list--item.selected.wrong {
-  background-color: #f8bcbc;
-  border-color: #f8bcbc;
-  opacity: 0.5;
-}
-
-.answer-list--item.correct,
-.answer-list--item.selected.correct {
-  background-color: #94d7a2;
-  border-color: #94d7a2;
-}
-
-.quiz-screen .btn {
-  text-align: center;
-  margin-inline: auto;
-  width: fit-content;
+.answer-list--item {
+  border: 1px solid #4d5b9e;
+  border-radius: 20px;
+  padding: 0.5em 2em;
   cursor: pointer;
 }
 
-.scorecard {
-  text-align: center;
+.answer-list--item input {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.answer-list--item:has(input:checked) {
+  background-color: #d6dbf5;
+  border-color: #d6dbf5;
+  cursor: default;
+}
+
+.answer-list--item:hover {
+  background-color: #d6dbf5;
+  border-color: #d6dbf5;
 }
 
 @media (max-width: 720px) {
-  .blob {
-    display: none;
-  }
   .question {
     margin-bottom: 3rem;
     margin-top: 1.5em;
   }
   .answers-list {
     flex-direction: column;
-  }
-  .answers-list li {
-    padding-block: 1em;
   }
 }

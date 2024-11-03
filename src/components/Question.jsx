@@ -1,7 +1,7 @@
 import React from 'react'
 import {decode} from 'html-entities'
 
-function Question({data, showAnswer, handleClick}) {
+function Question({data}) {
   const incorrectAnswers = data.incorrect_answers.map((answer) => ({
     content: answer,
     correct: false
@@ -17,27 +17,21 @@ function Question({data, showAnswer, handleClick}) {
     answers.sort(() => Math.random() - 0.5) // shuffling the array
   }, [])
 
-  // TODO: mark incorrect answers on check
   return (
     <div className="question-wrapper">
       <h2 className="question">{decode(data.question)}</h2>
-      {/* TODO: use radio inputs with labels */}
-      <ul className="answers-list">
+      <fieldset className="answers-list">
         {answers.map((answer) => (
-          <li
-            key={crypto.randomUUID()}
-            className={`answer-list--item ${
-              showAnswer ? (answer.correct ? 'correct' : 'wrong') : ''
-            }`}
-            onClick={(e) => {
-              e.currentTarget.classList.toggle('selected')
-              handleClick(decode(answer.content))
-            }}
-          >
+          <label key={crypto.randomUUID()} className={`answer-list--item`}>
+            <input
+              type="radio"
+              name={decode(data.question)}
+              value={answer.content}
+            />
             {decode(answer.content)}
-          </li>
+          </label>
         ))}
-      </ul>
+      </fieldset>
     </div>
   )
 }

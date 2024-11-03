@@ -3,7 +3,6 @@ import React from 'react'
 
 function Quiz() {
   const [questions, setQuestions] = React.useState([])
-  const [checked, setChecked] = React.useState(false)
   const [score, setScore] = React.useState(0)
 
   React.useEffect(() => {
@@ -20,42 +19,16 @@ function Quiz() {
     fetchData()
   }, [])
 
-  function checkQuestion(selected, question) {
-    // TODO: fix entire quiz component re-rendering when correct answer is selected for one question
-    if (selected == question.correct_answer) {
-      setScore(score + 1)
-    }
-  }
-
-  // TODO: refactor quiz into form
   return (
-    <div className="quiz-screen">
+    <form className="quiz-screen">
       <div className="questions-list">
         {questions.map((questionData) => (
-          <Question
-            key={crypto.randomUUID()}
-            data={questionData}
-            showAnswer={checked}
-            handleClick={(selected) => {
-              checkQuestion(selected, questionData)
-            }}
-          />
+          <Question key={crypto.randomUUID()} data={questionData} />
         ))}
       </div>
-      {checked && (
-        // TODO: add Play again button
-        // TODO: make this match figma design
-        <p className="scorecard">You scored {score}/5 correct answers</p>
-      )}
-      <div
-        className="btn"
-        onClick={() => {
-          setChecked(true)
-        }}
-      >
-        Check answers
-      </div>
-    </div>
+      {/* TODO: mark incorrect answers on check */}
+      <button className="btn">Check answers</button>
+    </form>
   )
 }
 

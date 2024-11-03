@@ -12,7 +12,7 @@ function App() {
   const StartScreen = (
     <div className="start-screen">
       <h1>Quizzical</h1>
-      <p>Some description if needed</p>
+      <p>Test your knowledge</p>
       <button className="btn" onClick={initQuiz}>
         Start
       </button>
