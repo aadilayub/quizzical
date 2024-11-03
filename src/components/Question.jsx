@@ -21,6 +21,7 @@ const Question = React.memo(function Question({data, showAnswer, handleClick}) {
   return (
     <div className="question-wrapper">
       <h2 className="question">{decode(data.question)}</h2>
+      {/* TODO: use radio inputs with labels */}
       <ul className="answers-list">
         {answers.map((answer) => (
           <li
