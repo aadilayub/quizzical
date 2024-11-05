@@ -13,7 +13,7 @@
   "editor.letterSpacing": 0,
   "debug.console.fontSize": 12,
   "window.commandCenter": false,
-  "workbench.preferredDarkColorTheme": "Monospace Dark",
+  "workbench.preferredDarkColorTheme": "Material Theme Ocean High Contrast",
   "workbench.preferredLightColorTheme": "Monospace Light",
   "workbench.iconTheme": "monospace",
   "window.autoDetectColorScheme": true,
